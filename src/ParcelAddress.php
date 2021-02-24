@@ -9,7 +9,26 @@ use GuzzleHttp\Exception\GuzzleException;
 class ParcelAddress extends Auth
 {
     const BASE_URI = 'https://api.nzpost.co.nz/parceladdress/2.0';
+    const ADDRESS_BASE_URI = 'https://api.nzpost.co.nz/addresschecker/1.0';
 
+    /**
+     * Returns a list of suggested domestic addresses for an address fragment.
+     *
+     * @param $q
+     * @param int $count
+     * @return array|bool|float|int|object|string|null
+     * @throws GuzzleException
+     */
+    public function addressLookup($dpid, $count = 1)
+    {
+        $uri = '/details';
+
+        return $this->call(self::ADDRESS_BASE_URI.$uri, [
+            'dpid' => $dpid,
+            'max' => $count
+
+        ]);
+    }
     /**
      * Returns a list of suggested domestic addresses for an address fragment.
      *
