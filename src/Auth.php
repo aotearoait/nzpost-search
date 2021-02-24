@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Aotraroait;
+namespace Aotearoait;
 
 
 use Exception;
