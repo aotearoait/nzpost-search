@@ -1,5 +1,5 @@
 {
-    "name": "aotearoait/nz-post",
+    "name": "aotearoait/nzpost-search",
     "description": "A PHP wrapper for NZ Post API",
     "type": "library",
     "keywords": [
