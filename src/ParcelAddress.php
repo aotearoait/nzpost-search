@@ -25,7 +25,8 @@ class ParcelAddress extends Auth
 
         return $this->call(self::ADDRESS_BASE_URI.$uri, [
             'dpid' => $dpid,
-            'max' => $count
+            'max' => $count,
+            'client_id' => env('NZPOST_CLIENT_ID')
 
         ]);
     }

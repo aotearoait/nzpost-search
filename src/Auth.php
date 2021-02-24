@@ -73,8 +73,8 @@ class Auth extends Client
         $response = $this->post(self::BASE_URI, [
             'form_params' => [
                 'grant_type' => 'client_credentials',
-                'client_id' => 'f390aa922fb842b0b16f2af138fed40e',
-                'client_secret' => '78a2eBF2cD5843A58B682b6DbAc1B3fa',
+                'client_id' => env('NZPOST_CLIENT_ID'),
+                'client_secret' => env('NZPOST_CLIENT_SECRET'),
             ],
         ])->getBody()->getContents();
         return \GuzzleHttp\json_decode($response);
